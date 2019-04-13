@@ -1,51 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <com.mapbox.services.android.navigation.ui.v5.NavigationView
-        android:id="@+id/navigationView"
+    <FrameLayout
+        android:id="@+id/navigation_fragment_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navigationDarkTheme="@style/NavigationViewDark"
-        app:navigationLightTheme="@style/CustomNavigationView"/>
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabToggleNightMode"
+        android:id="@+id/restart_navigation_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|start"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:src="@mipmap/ic_launcher"
         android:tint="@android:color/white"
-        app:layout_anchor="@id/spacer"
-        app:layout_anchorGravity="top|end"
-        app:srcCompat="@mipmap/ic_launcher"/>
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/speed_limit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginLeft="16dp"
-        android:background="@android:color/white"
-        android:elevation="3dp"
-        android:gravity="center"
-        android:padding="6dp"
-        android:textColor="@android:color/black"
-        android:textSize="35sp"
-        android:visibility="gone"
-        app:layout_anchor="@id/spacer"
-        app:layout_anchorGravity="top"/>
-
-    <View
-        android:id="@+id/spacer"
-        android:layout_width="wrap_content"
-        android:layout_height="6dp"
-        android:layout_gravity="top"
-        android:background="@android:color/transparent"
-        app:layout_anchorGravity="top"/>
-
-</android.support.design.widget.CoordinatorLayout>
+</android.support.constraint.ConstraintLayout>
